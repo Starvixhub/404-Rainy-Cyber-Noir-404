@@ -1,0 +1,776 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --night: #03040b;
+    --blue: #28c8ff;
+    --pink: #ff3cac;
+    --purple: #7b5cff;
+    --white: #eaf7ff;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: var(--night);
+    color: white;
+}
+
+
+/* =========================
+   SCENE
+========================= */
+
+.scene {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 25%,
+            #18234b 0%,
+            #080b1b 42%,
+            #020308 100%
+        );
+}
+
+
+/* =========================
+   SKY
+========================= */
+
+.sky {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(10,14,35,.2),
+            rgba(0,0,0,.75)
+        );
+}
+
+
+/* =========================
+   MOON
+========================= */
+
+.moon {
+    position: absolute;
+
+    top: 12%;
+    right: 16%;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            #e8f4ff,
+            #9fb9d9
+        );
+
+    opacity: .75;
+
+    box-shadow:
+        0 0 35px rgba(160,200,255,.25);
+}
+
+
+/* =========================
+   CITY
+========================= */
+
+.city {
+    position: absolute;
+
+    bottom: 27%;
+
+    left: 0;
+
+    width: 100%;
+    height: 180px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    gap: 4px;
+
+    opacity: .8;
+}
+
+.city span {
+    display: block;
+
+    width: 7%;
+    min-width: 35px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #101326,
+            #05060d
+        );
+
+    border-top:
+        1px solid
+        rgba(100,150,220,.15);
+}
+
+.city span:nth-child(1) {
+    height: 65%;
+}
+
+.city span:nth-child(2) {
+    height: 90%;
+}
+
+.city span:nth-child(3) {
+    height: 55%;
+}
+
+.city span:nth-child(4) {
+    height: 100%;
+}
+
+.city span:nth-child(5) {
+    height: 70%;
+}
+
+.city span:nth-child(6) {
+    height: 85%;
+}
+
+.city span:nth-child(7) {
+    height: 60%;
+}
+
+
+/* =========================
+   NEON SIGNS
+========================= */
+
+.neon {
+    position: absolute;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    writing-mode: vertical-rl;
+
+    font-weight: 900;
+
+    letter-spacing: 8px;
+
+    border: 2px solid;
+
+    padding: 14px 9px;
+
+    background: rgba(5,5,15,.5);
+
+    backdrop-filter: blur(4px);
+}
+
+.neon span {
+    animation:
+        flicker 4s infinite;
+}
+
+.neon-pink {
+    top: 28%;
+    left: 9%;
+
+    color: var(--pink);
+
+    border-color: var(--pink);
+
+    box-shadow:
+        0 0 10px var(--pink),
+        inset 0 0 10px rgba(255,60,172,.25);
+}
+
+.neon-blue {
+    top: 37%;
+    right: 9%;
+
+    color: var(--blue);
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 10px var(--blue),
+        inset 0 0 10px rgba(40,200,255,.25);
+}
+
+@keyframes flicker {
+
+    0%,
+    18%,
+    20%,
+    22%,
+    63%,
+    65%,
+    100% {
+        opacity: 1;
+    }
+
+    19%,
+    64% {
+        opacity: .4;
+    }
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.content {
+    position: absolute;
+
+    z-index: 8;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: min(650px, 90%);
+
+    text-align: center;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    padding:
+        7px 14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius: 30px;
+
+    background:
+        rgba(0,0,0,.25);
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ff3c70;
+
+    box-shadow:
+        0 0 10px #ff3c70;
+
+    animation:
+        pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .3;
+    }
+}
+
+
+/* =========================
+   404
+========================= */
+
+h1 {
+    font-size:
+        clamp(
+            130px,
+            23vw,
+            250px
+        );
+
+    line-height: .75;
+
+    font-weight: 900;
+
+    letter-spacing: -15px;
+
+    color: transparent;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #b7d9ff 35%,
+            #4c8dff 70%,
+            #182d70
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    text-shadow:
+        0 0 40px
+        rgba(60,150,255,.25);
+
+    animation:
+        rainGlow 3s ease-in-out infinite;
+}
+
+@keyframes rainGlow {
+
+    0%,
+    100% {
+        filter:
+            drop-shadow(
+                0 0 5px
+                rgba(50,150,255,.15)
+            );
+    }
+
+    50% {
+        filter:
+            drop-shadow(
+                0 0 25px
+                rgba(50,150,255,.45)
+            );
+    }
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h2 {
+    margin-top: 25px;
+
+    font-size:
+        clamp(
+            26px,
+            5vw,
+            48px
+        );
+
+    font-weight: 500;
+
+    color: var(--white);
+}
+
+.content p {
+    max-width: 560px;
+
+    margin:
+        18px auto 30px;
+
+    color:
+        rgba(220,235,255,.65);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        14px 25px;
+
+    border:
+        1px solid
+        rgba(40,200,255,.5);
+
+    border-radius: 5px;
+
+    background:
+        rgba(10,30,55,.5);
+
+    color: #dff8ff;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        .3s ease;
+}
+
+button span {
+    font-size: 20px;
+}
+
+button:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        var(--blue);
+
+    background:
+        rgba(40,200,255,.12);
+
+    box-shadow:
+        0 0 25px
+        rgba(40,200,255,.2);
+}
+
+
+/* =========================
+   RAIN
+========================= */
+
+.rain {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 6;
+
+    pointer-events: none;
+}
+
+.drop {
+    position: absolute;
+
+    top: -30px;
+
+    width: 1px;
+
+    height: 70px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(180,220,255,.7)
+        );
+
+    transform:
+        rotate(12deg);
+
+    animation:
+        rainfall linear infinite;
+}
+
+@keyframes rainfall {
+
+    from {
+        transform:
+            translateY(-100px)
+            translateX(0)
+            rotate(12deg);
+    }
+
+    to {
+        transform:
+            translateY(110vh)
+            translateX(-100px)
+            rotate(12deg);
+    }
+}
+
+
+/* =========================
+   ROAD
+========================= */
+
+.road {
+    position: absolute;
+
+    z-index: 4;
+
+    bottom: 0;
+
+    width: 100%;
+    height: 28%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #080a13,
+            #020205
+        );
+
+    border-top:
+        1px solid
+        rgba(100,150,220,.1);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   REFLECTIONS
+========================= */
+
+.reflection {
+    position: absolute;
+
+    opacity: .08;
+
+    filter:
+        blur(5px);
+
+    transform:
+        scaleY(-1);
+
+    font-size: 80px;
+
+    font-weight: 900;
+}
+
+.reflection-1 {
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        scaleY(-1);
+
+    color: var(--blue);
+}
+
+.reflection-2 {
+    right: 10%;
+
+    bottom: 15%;
+
+    color: var(--pink);
+
+    font-size: 40px;
+}
+
+
+/* =========================
+   MIST
+========================= */
+
+.mist {
+    position: absolute;
+
+    z-index: 7;
+
+    width: 70%;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(130,170,210,.07);
+
+    filter:
+        blur(25px);
+
+    pointer-events: none;
+
+    animation:
+        mistMove 9s ease-in-out infinite alternate;
+}
+
+.mist-1 {
+    bottom: 20%;
+    left: -10%;
+}
+
+.mist-2 {
+    bottom: 12%;
+    right: -15%;
+
+    animation-delay: 3s;
+}
+
+@keyframes mistMove {
+
+    from {
+        transform:
+            translateX(-30px);
+    }
+
+    to {
+        transform:
+            translateX(50px);
+    }
+}
+
+
+/* =========================
+   STREET LIGHT
+========================= */
+
+.street-light {
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 26%;
+    left: 5%;
+
+    width: 3px;
+    height: 250px;
+
+    background: #151823;
+}
+
+.street-light::before {
+    content: "";
+
+    position: absolute;
+
+    top: -8px;
+    left: -15px;
+
+    width: 35px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #d6e8ff;
+
+    box-shadow:
+        0 0 20px #9bc5ff,
+        0 0 60px rgba(100,170,255,.45);
+}
+
+.street-light::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -80px;
+
+    width: 170px;
+    height: 170px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(100,170,255,.13),
+            transparent 70%
+        );
+
+    filter: blur(5px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    position: absolute;
+
+    z-index: 10;
+
+    bottom: 18px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        rgba(255,255,255,.3);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .moon {
+        width: 65px;
+        height: 65px;
+
+        right: 8%;
+    }
+
+    .neon {
+        font-size: 9px;
+        padding: 9px 6px;
+    }
+
+    .neon-pink {
+        left: 3%;
+    }
+
+    .neon-blue {
+        right: 3%;
+    }
+
+    .content p {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 8px;
+    }
+}
