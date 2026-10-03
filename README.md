@@ -26,7 +26,7 @@ A dark cyber-noir 404 error page featuring animated rain, neon signs, a midnight
 ## Live Demo
 
 * [🌐 GitHub Pages](https://starvixhub.github.io/404-Rainy-Cyber-Noir-404/)
-* - [🎨 CodePen](https://codepen.io/editor/sinarezaei/pen/01a0df9f-43d5-74ca-b635-2934d9b84a33)
+* [🎨 CodePen](https://codepen.io/editor/sinarezaei/pen/01a0df9f-43d5-74ca-b635-2934d9b84a33)
 
 ## License
 
