@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="[404-Rainy-Cyber-Noir-404.png](https://github.com/Starvixhub/404-Rainy-Cyber-Noir-404/blob/main/starvixhub-github-io-404-Rainy-Cyber-Noir-404.png)" alt="404: Rainy Cyber-Noir 404" width="100%">
+  <img src="https://github.com/Starvixhub/404-Rainy-Cyber-Noir-404/blob/main/starvixhub-github-io-404-Rainy-Cyber-Noir-404.png?raw=true" alt="404: Rainy Cyber-Noir 404" width="100%">
 </p>
 
 # 404: Rainy Cyber-Noir 404
